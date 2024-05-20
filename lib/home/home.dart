@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
     "assets/images/Aries.png",
     "assets/images/Taurus.png",
     "assets/images/Gemini.png",
-    "assets/images/Cancer.jpg",
+    "assets/images/Cancer.png",
     "assets/images/Leo.png",
     "assets/images/Virgo.png",
     "assets/images/Libra.png",
