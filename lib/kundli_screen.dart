@@ -162,6 +162,7 @@ class _KundliScreenState extends State<KundliScreen> {
                 return Container(
                   alignment: Alignment.bottomLeft,
                   decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 2),
                     color: const Color(0xFFEFBAFD),
                     image: DecorationImage(
                       image: AssetImage(
