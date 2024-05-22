@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
-class KundliScreen extends StatelessWidget {
+class KundliScreen extends StatefulWidget {
   static const String routeName = "Kundli";
 
   KundliScreen({super.key});
 
+  @override
+  State<KundliScreen> createState() => _KundliScreenState();
+}
+
+class _KundliScreenState extends State<KundliScreen> {
   List<String> icons = [
     "assets/images/BIrth Chart.png",
     "assets/images/Match Making.png",
