@@ -1,23 +1,42 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:test1/horoscope_screen.dart';
-import 'package:test1/kundli_screen.dart';
+import 'package:test1/pages/icon_details.dart';
 
-class HomeScreen extends StatelessWidget {
-  static const String routeName = "Home";
+class HoroScopeScreen extends StatefulWidget {
+  static const String routeName = "HoroScopeScreen";
 
-  const HomeScreen({super.key});
+  const HoroScopeScreen({super.key});
+
+  @override
+  State<HoroScopeScreen> createState() => _HoroScopeScreenState();
+}
+
+class _HoroScopeScreenState extends State<HoroScopeScreen> {
+  List<String> icons = [
+    "assets/images/Aries.png",
+    "assets/images/Taurus.png",
+    "assets/images/Gemini.png",
+    "assets/images/Cancer.png",
+    "assets/images/Leo.png",
+    "assets/images/Virgo.png",
+    "assets/images/Libra.png",
+    "assets/images/Scorpio.png",
+    "assets/images/Sagittarius.png",
+    "assets/images/Capricorn.png",
+    "assets/images/Aquarius.png",
+    "assets/images/Pisces.png",
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFFDF2F8),
       appBar: AppBar(
           backgroundColor: const Color(0xFF672F98),
           title: const Text(
             "Divine Connection",
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
+          iconTheme: const IconThemeData(color: Colors.white),
           actions: [
             Container(
               width: 100,
@@ -114,82 +133,57 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: [
           const Padding(
-            padding: EdgeInsets.only(top: 100.0),
-            child: Text(
-              "Choose Your Section",
-              style: TextStyle(
-                fontSize: 35,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFF672F98),
+            padding: EdgeInsets.all(8.0),
+            child: Center(
+              child: Text(
+                "Horoscope",
+                style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFF672F98)),
               ),
             ),
           ),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 150),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(
-                              context, HoroScopeScreen.routeName);
-                        },
-                        child: Image.asset(
-                          'assets/images/image1.png',
-                          fit: BoxFit.fill,
+          const Divider(
+            thickness: 3,
+            indent: 2,
+            endIndent: 2,
+            color: Colors.black,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Expanded(
+            child: GridView.builder(
+              itemCount: icons.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 1.5,
+                  mainAxisSpacing: 40,
+                  crossAxisSpacing: 2),
+              itemBuilder: (BuildContext context, int index) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      IconDetailScreen.routeName,
+                      arguments: {
+                        'iconPath': icons[index],
+                        'iconText': 'Icon ${index + 1}',
+                      },
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                          icons[index],
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                        "Horo Scope",
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF672F98),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                Expanded(
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 150,
-                        width: 250,
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(
-                                context, KundliScreen.routeName);
-                          },
-                          child: Image.asset(
-                            'assets/images/image2.png',
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                        "Kundli",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Color(0xFF672F98),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+                );
+              },
             ),
           ),
         ],
