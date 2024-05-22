@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:test1/kundli_details.dart';
 
 class KundliScreen extends StatefulWidget {
   static const String routeName = "Kundli";
@@ -150,37 +152,132 @@ class _KundliScreenState extends State<KundliScreen> {
           const SizedBox(
             height: 100,
           ),
-          Expanded(
-            child: GridView.builder(
-              itemCount: icons.length,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 1.5,
-                  mainAxisSpacing: 35,
-                  crossAxisSpacing: 10),
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  alignment: Alignment.bottomLeft,
+          Row(
+            children: [
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, KundliDetails.routeName);
+                },
+                child: Container(
+                    height: 200,
+                    width: 200,
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFEFBAFD),
+                    ),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: Image.asset("assets/images/BIrth Chart.png"),
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        const Text(
+                          "Birth Chart",
+                          style: TextStyle(
+                              fontSize: 28, fontWeight: FontWeight.w600),
+                        )
+                      ],
+                    )),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, KundliDetails.routeName);
+                },
+                child: Container(
+                  height: 200,
+                  width: 200,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 2),
-                    color: const Color(0xFFEFBAFD),
-                    image: DecorationImage(
-                      image: AssetImage(
-                        icons[index],
+                    color: Color(0xFFEFBAFD),
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15.0),
+                        child: Image.asset("assets/images/Match Making.png"),
                       ),
-                    ),
+                      const SizedBox(
+                        height: 33,
+                      ),
+                      const Text(
+                        "Match Making",
+                        style: TextStyle(
+                            fontSize: 28, fontWeight: FontWeight.w600),
+                      )
+                    ],
                   ),
-                  child: Text(
-                    names[index],
-                    style: const TextStyle(
-                      fontSize: 17,
-                      color: Color(0xFF672F98),
-                      fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            children: [
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, KundliDetails.routeName);
+                },
+                child: Container(
+                    height: 200,
+                    width: 200,
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFEFBAFD),
                     ),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 15.0),
+                          child: Image.asset("assets/images/Life Report.png"),
+                        ),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        const Text(
+                          "Life Report",
+                          style: TextStyle(
+                              fontSize: 28, fontWeight: FontWeight.w600),
+                        )
+                      ],
+                    )),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, KundliDetails.routeName);
+                },
+                child: Container(
+                  height: 200,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFEFBAFD),
                   ),
-                );
-              },
-            ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15.0),
+                        child: Image.asset("assets/images/Remedies.png"),
+                      ),
+                      const SizedBox(
+                        height: 33,
+                      ),
+                      const Text(
+                        "Remedies",
+                        style: TextStyle(
+                            fontSize: 28, fontWeight: FontWeight.w600),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),

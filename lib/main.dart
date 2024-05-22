@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test1/home/home.dart';
+import 'package:test1/kundli_details.dart';
 import 'package:test1/kundli_screen.dart';
 import 'package:test1/pages/icon_details.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
                   as Map<String, String>)['iconText']!,
             ),
         KundliScreen.routeName: (context) => KundliScreen(),
+        KundliDetails.routeName: (context) => const KundliDetails(),
 
       },
     );
