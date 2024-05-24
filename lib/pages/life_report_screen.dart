@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
 
-class MatchMakingScreen extends StatefulWidget {
-  static const String routeName = "Match";
-
-   const MatchMakingScreen({super.key});
+class LifeReportScreen extends StatefulWidget {
+  static const String routeName = "Life";
+  const LifeReportScreen({super.key});
 
   @override
-  State<MatchMakingScreen> createState() => _MatchMakingScreenState();
+  State<LifeReportScreen> createState() => _LifeReportScreenState();
 }
 
-class _MatchMakingScreenState extends State<MatchMakingScreen> {
- TextEditingController nameController = TextEditingController();
+class _LifeReportScreenState extends State<LifeReportScreen> {
+  TextEditingController nameController = TextEditingController();
 
- TextEditingController birthDateController = TextEditingController();
+  TextEditingController birthDateController = TextEditingController();
 
- TextEditingController birthTimeController = TextEditingController();
+  TextEditingController birthTimeController = TextEditingController();
 
- TextEditingController birthPlaceController = TextEditingController();
+  TextEditingController birthPlaceController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xFFEDCFF6),
       appBar: AppBar(
@@ -128,7 +127,7 @@ class _MatchMakingScreenState extends State<MatchMakingScreen> {
           children: [
             const Center(
               child: Text(
-                "Match Making",
+                "Life Report",
                 style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
@@ -162,7 +161,7 @@ class _MatchMakingScreenState extends State<MatchMakingScreen> {
                     const Padding(
                       padding: EdgeInsets.all(18.0),
                       child: Text(
-                        "Boy's Details",
+                        "Enter Your Details",
                         style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w500,
@@ -176,6 +175,7 @@ class _MatchMakingScreenState extends State<MatchMakingScreen> {
                     Padding(
                       padding: const EdgeInsets.all(18.0),
                       child: TextFormField(
+                        keyboardType: TextInputType.name,
                         controller: nameController,
                         decoration: const InputDecoration(
                             label: Text("Name"),
@@ -193,6 +193,7 @@ class _MatchMakingScreenState extends State<MatchMakingScreen> {
                     Padding(
                       padding: const EdgeInsets.all(18.0),
                       child: TextFormField(
+                        keyboardType: TextInputType.number,
                         controller: birthDateController,
                         decoration: const InputDecoration(
                             label: Text("Birth Date"),
@@ -211,6 +212,7 @@ class _MatchMakingScreenState extends State<MatchMakingScreen> {
                     Padding(
                       padding: const EdgeInsets.all(18.0),
                       child: TextFormField(
+                        keyboardType: TextInputType.number,
                         controller: birthTimeController,
                         decoration: const InputDecoration(
                             label: Text("Birth Time"),
@@ -229,105 +231,7 @@ class _MatchMakingScreenState extends State<MatchMakingScreen> {
                     Padding(
                       padding: const EdgeInsets.all(18.0),
                       child: TextFormField(
-                        controller: birthPlaceController,
-                        decoration: const InputDecoration(
-                            label: Text("Birth Place"),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(25),
-                              ),
-                            ),
-                            hintText: "Enter birth city name"),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 25,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 500,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(25),
-                    border: Border.all(color: Colors.black)),
-                child: Column(
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.all(18.0),
-                      child: Text(
-                        "Girl's Details",
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF672F98),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: TextFormField(
-                        controller: nameController,
-                        decoration: const InputDecoration(
-                            label: Text("Name"),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(25),
-                              ),
-                            ),
-                            hintText: "Enter Your Name"),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: TextFormField(
-                        controller: birthDateController,
-                        decoration: const InputDecoration(
-                            label: Text("Birth Date"),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(25),
-                              ),
-                            ),
-                            suffixIcon: Icon(Icons.date_range),
-                            hintText: "yyyy/mm/dd"),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: TextFormField(
-                        controller: birthTimeController,
-                        decoration: const InputDecoration(
-                            label: Text("Birth Time"),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(25),
-                              ),
-                            ),
-                            suffixIcon: Icon(Icons.access_time),
-                            hintText: "--:--"),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: TextFormField(
+                        keyboardType: TextInputType.text,
                         controller: birthPlaceController,
                         decoration: const InputDecoration(
                             label: Text("Birth Place"),

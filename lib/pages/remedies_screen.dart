@@ -1,25 +1,12 @@
 import 'package:flutter/material.dart';
 
-class LifeReportScreen extends StatefulWidget {
-  static const String routeName = "Life";
-  const LifeReportScreen({super.key});
-
-  @override
-  State<LifeReportScreen> createState() => _LifeReportScreenState();
-}
-
-class _LifeReportScreenState extends State<LifeReportScreen> {
-  TextEditingController nameController = TextEditingController();
-
-  TextEditingController birthDateController = TextEditingController();
-
-  TextEditingController birthTimeController = TextEditingController();
-
-  TextEditingController birthPlaceController = TextEditingController();
+class RemediesScreen extends StatelessWidget {
+  static const String routeName = "Remedies";
+  const RemediesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xFFEDCFF6),
       appBar: AppBar(
@@ -127,7 +114,7 @@ class _LifeReportScreenState extends State<LifeReportScreen> {
           children: [
             const Center(
               child: Text(
-                "Life Report",
+                "Remedies",
                 style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
@@ -175,7 +162,7 @@ class _LifeReportScreenState extends State<LifeReportScreen> {
                     Padding(
                       padding: const EdgeInsets.all(18.0),
                       child: TextFormField(
-                        controller: nameController,
+                        keyboardType: TextInputType.text,
                         decoration: const InputDecoration(
                             label: Text("Name"),
                             border: OutlineInputBorder(
@@ -192,7 +179,7 @@ class _LifeReportScreenState extends State<LifeReportScreen> {
                     Padding(
                       padding: const EdgeInsets.all(18.0),
                       child: TextFormField(
-                        controller: birthDateController,
+                        keyboardType: TextInputType.text,
                         decoration: const InputDecoration(
                             label: Text("Birth Date"),
                             border: OutlineInputBorder(
@@ -210,7 +197,7 @@ class _LifeReportScreenState extends State<LifeReportScreen> {
                     Padding(
                       padding: const EdgeInsets.all(18.0),
                       child: TextFormField(
-                        controller: birthTimeController,
+                        keyboardType: TextInputType.text,
                         decoration: const InputDecoration(
                             label: Text("Birth Time"),
                             border: OutlineInputBorder(
@@ -228,7 +215,7 @@ class _LifeReportScreenState extends State<LifeReportScreen> {
                     Padding(
                       padding: const EdgeInsets.all(18.0),
                       child: TextFormField(
-                        controller: birthPlaceController,
+                        keyboardType: TextInputType.text,
                         decoration: const InputDecoration(
                             label: Text("Birth Place"),
                             border: OutlineInputBorder(

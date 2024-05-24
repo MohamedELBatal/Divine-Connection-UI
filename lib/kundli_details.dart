@@ -8,6 +8,7 @@ class KundliDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
           backgroundColor: const Color(0xFF672F98),
           title: const Text(

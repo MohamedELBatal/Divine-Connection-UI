@@ -29,6 +29,7 @@ class _HoroScopeScreenState extends State<HoroScopeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: const Color(0xFFFDF2F8),
       appBar: AppBar(
           backgroundColor: const Color(0xFF672F98),

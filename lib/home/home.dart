@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
           backgroundColor: const Color(0xFF672F98),
           title: const Text(
@@ -144,7 +145,7 @@ class HomeScreen extends StatelessWidget {
                         height: 10,
                       ),
                       const Text(
-                        "Horo Scope",
+                        "HoroScope",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test1/kundli_details.dart';
-import 'package:test1/life_report_screen.dart';
-import 'package:test1/match_making_screen.dart';
-import 'package:test1/remedies_screen.dart';
+import 'package:test1/pages/life_report_screen.dart';
+import 'package:test1/pages/match_making_screen.dart';
+import 'package:test1/pages/remedies_screen.dart';
 
 class KundliScreen extends StatefulWidget {
   static const String routeName = "Kundli";
