@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:test1/horoscope_screen.dart';
-import 'package:test1/kundli_screen.dart';
+import 'package:test1/pages/horoscope_screen.dart';
+import 'package:test1/pages/kundli_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = "Home";
